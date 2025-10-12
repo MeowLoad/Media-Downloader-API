@@ -1,23 +1,21 @@
 # JavaScript 代码调用接口示例 📄
 
-以下为 JavaScript 语言调用提取接口的示例。示例代码中用到的 userId 和 secretKey 请前往[开发者接口管理中心](https://www.henghengmao.com/user/developer)获取。
+以下为 JavaScript 语言调用提取接口的示例。示例代码中用到的 `API Key` 请前往[开发者接口管理中心](https://www.henghengmao.com/user/developer)获取。
 
 ```javascript
-const api = "https://h.aaaapp.cn/single_post"; // 单个帖子提取接口 (如果主页批量提取使用：https://h.aaaapp.cn/posts)
-const userId = "C81E728D9DC2F636F06CC14862C"; //这里改成你自己的 userId
-const secretKey = "eac9587cb785c2dd70cd07e116c"; //这里改成你自己的 secretKey
+const api = "https://api.meowload.net/openapi/extract/post"; // 单个帖子提取接口，如果主页批量提取使用：https://api.meowload.net/openapi/extract/playlist
 
-let url = "https://v.douyin.com/MGkSpJS/";
+const apiKey = "dkyfevujkpxxsc9m-w4ewnqhv8l6g"; //这里改成你自己的 API Key
 
 const params = {
-  userId: userId,
-  secretKey: secretKey,
-  url: url,
+  url: "https://v.douyin.com/MGkSpJS/",
 };
 
 const xhr = new XMLHttpRequest();
 xhr.open("POST", api, true);
 xhr.setRequestHeader("content-type", "application/json;charset=UTF-8");
+xhr.setRequestHeader("x-api-key", apiKey); // 指定 API Key
+xhr.setRequestHeader("accept-language", "zh"); // 指定错误 message 返回的语言为中文
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4) {
     console.log(xhr.responseText);

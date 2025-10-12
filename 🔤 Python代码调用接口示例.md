@@ -1,21 +1,23 @@
 # Python 代码调用接口示例 📄
 
-以下为 Python 语言调用提取接口的示例。示例代码中用到的 userId 和 secretKey 请前往[开发者接口管理中心](https://www.henghengmao.com/user/developer)获取。
+以下为 Python 语言调用提取接口的示例。示例代码中用到的 `API Key` 请前往[开发者接口管理中心](https://www.henghengmao.com/user/developer)获取。
 
 ```python
 import requests
-hhm_api = 'https://h.aaaapp.cn/single_post'     # 单个帖子提取接口 (如果主页批量提取使用：https://h.aaaapp.cn/posts)
-user_id = 'C81E028D9DC2F636F06CA19862C'         # 这里改成你自己的 userId
-secret_key = 'eac9387cb705c2dd70cd07e216c'      # 这里改成你自己的 secretKey
+hhm_api = 'https://api.meowload.net/openapi/extract/post'     # 单个帖子提取接口，如果主页批量提取使用：https://api.meowload.net/openapi/extract/playlist
+
+api_key = 'dkyfevujkpxxsc9m-w4ewnqhv8l6g'         # 这里改成你自己的 API Key
 
 # 参数
-url = 'https://www.bilibili.com/video/BV1sG4y1p7TA/'
-
 params = {
-    'userId': user_id,
-    'secretKey': secret_key,
-    'url': url
+    'url': 'https://www.bilibili.com/video/BV1sG4y1p7TA/'
 }
-r = requests.post(hhm_api, json=params, verify=False)
+
+headers = {
+    'x-api-key': api_key,        # 指定 API Key
+    'accept-language': 'zh'      # 指定错误 message 返回的语言为中文
+}
+
+r = requests.post(hhm_api, json=params, headers=headers, verify=False)
 print(r.json())
 ```

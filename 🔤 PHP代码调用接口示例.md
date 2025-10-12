@@ -13,7 +13,7 @@ $url = "https://www.tiktok.com/@nike/video/7198345395863309611";
 $params = array("url" => $url);
 $options = array(
     "http" => array(
-        "header"  => "Content-type: application/json\r\nx-api-key: " . $apiKey . "\r\naccept-language: zh",
+        "header"  => "content-type: application/json\r\nx-api-key: " . $apiKey . "\r\naccept-language: zh",
         "method"  => "POST",
         "content" => json_encode($params),
     ),

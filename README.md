@@ -1,8 +1,9 @@
 # 哼哼猫接口文档
 
 > [!IMPORTANT]
-> ## 📢 哼哼猫最近新增了一些 API
-> 请前往 👉 **[哼哼猫文档中心](https://docs.henghengmao.com/zh/developer)** 查看最新版本接口文档。
+> 本仓库是**老版本接口**（无版本号 `/openapi/…`）的文档，仅供已接入的开发者查阅。新接入请使用 **v1 接口文档**：<https://docs.henghengmao.com/developer>；从老版本迁移到 v1 的指南：<https://docs.henghengmao.com/developer/migration>。
+>
+> This repository documents the **legacy (unversioned) API** and is kept for developers who already integrated it. For new integrations use the **v1 API docs**: <https://docs.henghengmao.com/en/developer>; migration guide: <https://docs.henghengmao.com/en/developer/migration>.
 
 ---
 
